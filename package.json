@@ -1,0 +1,25 @@
+{
+  "name": "ejercicio1",
+  "version": "1.0.0",
+  "description": "backend avanzado mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "type":"module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeema7/ejercicio1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeema7/ejercicio1/issues"
+  },
+  "homepage": "https://github.com/jeema7/ejercicio1#readme",
+  "dependencies": {
+    "mongoose": "^6.5.1"
+  }
+}
