@@ -1,9 +1,9 @@
 import Book from "./models/Book.js";
 //TODO: Crear
-const createBook = ()=>{
-    Book.create({
+const createBook = async ()=>{
+    await Book.create({
         title:'Como programar en un dia',
-        author: 'Emma Esther',
+        author: 'Emma Esther Hernan',
         editon: '2021',
         isbn: '01238473882',
         pages: 20,
@@ -11,18 +11,29 @@ const createBook = ()=>{
        });
 }
 //TODO: actualizar
-const updateBook = () => {
-    Book.updateOne({
+const updateBook = async () => {
+    await Book.updateOne({
+        //Criterios de busqueda (Filtros) buscara un libro que contenga 20 paginas y que su isbn sea el mismo
         pages:20,
-        isbn:'234859482929u1'
+        isbn:'01238473882',
+        
     },
     {
+         //Datos a actulizar 
         author:'Jonathan',
     }
     )
 }
 //TODO: Leer
-
+    const readBook = async () =>{
+     await Book.find({
+            author: "Emma Esther Hernan",
+        })
+    }
 //TODO: Eliminar
-
-export {createBook, updateBook}
+    const deleteBook = async () =>{
+        await Book.deleteOne({
+            author: "Jonathan",
+        })
+    }
+export {createBook, updateBook,readBook,deleteBook}

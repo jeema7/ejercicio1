@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { createBook, updateBook } from "./crud.js";
+import { createBook, updateBook,readBook,deleteBook } from "./crud.js";
 
 const db = mongoose.connection
 //Saber si se conecto dio error o se desconecto
@@ -24,6 +24,14 @@ db.on('connected', ()=>{
 //    //TODO: Mandar llamar deletBook
 // })
 //Conectando a la base local
-mongoose.connect('mongodb://localhost:27017/test', () =>{
-    createBook()
+mongoose.connect('mongodb+srv://Frp2:txPV9Ym33bRm9cyR@cluster0.sduskel.mongodb.net/base2?retryWrites=true&w=majority', async () =>{
+    try {
+        await createBook();
+        await updateBook();
+        await readBook();
+        await deleteBook();
+    } catch (error) {
+        console.log('Ha ocurrido un error',error);
+    }
+    
 })
